@@ -22,46 +22,106 @@
 		<![endif]-->
 	</head>
 	<body>
+	
 		<script type="text/x-handlebars">
-		 {{#link-to 'local'
-          class='btn btn-default'}}
-          Local
-        {{/link-to}}
-        
-        {{#link-to 'worldnews'
-          class='btn btn-default'}}
-          WorldNews
-        {{/link-to}}
-		
-		{{#link-to 'business'
-          class='btn btn-default'}}
-          Business
-        {{/link-to}}
-		
-		{{#link-to 'entertainment'
-          class='btn btn-default'}}
-          Entertainment
-        {{/link-to}}
-		
-		OUTPUT-{{outlet}}
+
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuNavbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+			  <a class="navbar-brand" href="#">Ember News</a>
+			</div>
+			<div class="collapse navbar-collapse" id="menuNavbar">
+				<ul class="nav navbar-nav">
+				
+					<li role="presentation" class="active">
+					 {{#link-to 'local'}}
+					  Local
+					{{/link-to}}
+					</li>
+				
+					<li role="presentation">
+					{{#link-to 'worldnews'}}
+					  World News
+					{{/link-to}}
+					</li>
+				
+					<li role="presentation">
+					{{#link-to 'business'}}
+					  Business
+					{{/link-to}}
+					</li>
+				
+					<li role="presentation">
+					{{#link-to 'entertainment'}}
+					  Entertainment
+					{{/link-to}}
+					</li>
+			
+				</ul>
+			</div>
+			</div>
+		</nav>
+		<div class="container">
+			<div class="well">
+				{{outlet}}
+			</div>
+		</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="index">
-			Welcome To Ember News!
+			<img src="images/EmberNews.png" class="center-block img-responsive"/>
+			Welcome To Ember News
 			
 		</script>
 		<script type="text/x-handlebars" data-template-name="local">
-			Local
+			<h2>Local</h2>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+				</div>
+				<div class="panel-body">
+					Panel content
+				</div>
+			</div>
 		</script>
 		<script type="text/x-handlebars" data-template-name="worldnews">
-			World News
+			<h2>World News</h2>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+				</div>
+				<div class="panel-body">
+					Panel content
+				</div>
+			</div>
 		</script>
 		<script type="text/x-handlebars" data-template-name="business">
-			Business
+			<h2>Business</h2>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+				</div>
+				<div class="panel-body">
+					Panel content
+				</div>
+			</div>
 		</script>
 		<script type="text/x-handlebars" data-template-name="entertainment">
-			Entertainment
+			<h2>Entertainment</h2>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+				</div>
+				<div class="panel-body">
+					Panel content
+				</div>
+			</div>
 		</script>
-		
 	</body>
 </html>
