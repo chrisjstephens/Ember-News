@@ -17,6 +17,7 @@
 		<script src="app/app.js"></script>
 		<script src="app/router.js"></script>
 		<script src="app/controllers/application.js"></script>
+		<script src="app/models/entries.js"></script>
 		<!--[if lt IE 9]>
 			<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -38,31 +39,36 @@
 			</div>
 			<div class="collapse navbar-collapse" id="menuNavbar">
 				<ul class="nav navbar-nav">
-				
-					<li role="presentation" class="active">
-					 {{#link-to 'local'}}
-					  Local
-					{{/link-to}}
-					</li>
-				
-					<li role="presentation">
-					{{#link-to 'worldnews'}}
-					  World News
-					{{/link-to}}
-					</li>
-				
-					<li role="presentation">
-					{{#link-to 'business'}}
-					  Business
-					{{/link-to}}
-					</li>
-				
+					{{#link-li}}
+					  {{#link-to 'local'}}
+						Local
+					  {{/link-to}}
+					{{/link-li}}
+					
+					{{#link-li}}
+					  {{#link-to 'worldnews'}}
+						World News
+					  {{/link-to}}
+					{{/link-li}}
+					
+					{{#link-li}}
+					  {{#link-to 'business'}}
+						Business
+					  {{/link-to}}
+					{{/link-li}}
+					
+					{{#link-li}}
+					  {{#link-to 'entertainment'}}
+						Entertainment
+					  {{/link-to}}
+					{{/link-li}}
+					
 					<li role="presentation">
 					{{#link-to 'entertainment'}}
 					  Entertainment
 					{{/link-to}}
 					</li>
-			
+
 				</ul>
 			</div>
 			</div>
@@ -77,18 +83,19 @@
 		<script type="text/x-handlebars" data-template-name="index">
 			<img src="images/EmberNews.png" class="center-block img-responsive"/>
 			Welcome To Ember News
-			
 		</script>
 		<script type="text/x-handlebars" data-template-name="local">
 			<h2>Local</h2>
+			{{#each entries in model}}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+					<h3 class="panel-title" id="panel-title">{{entries.title}} - {{entries.date}}<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
 				</div>
 				<div class="panel-body">
-					Panel content
+					{{entries.post}}
 				</div>
 			</div>
+			{{/each}}
 		</script>
 		<script type="text/x-handlebars" data-template-name="worldnews">
 			<h2>World News</h2>

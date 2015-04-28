@@ -5,3 +5,9 @@ App.Router.map(function() {
   this.route('business', { path: '/business' });
   this.route('entertainment', { path: '/entertainment' });  
 });
+
+App.LocalRoute = Ember.Route.extend({
+  model: function() {
+    return this.store.find('Local');
+  }
+});
