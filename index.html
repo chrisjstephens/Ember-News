@@ -46,7 +46,7 @@
 					{{/link-li}}
 					
 					{{#link-li}}
-					  {{#link-to 'worldnews'}}
+					  {{#link-to 'wnews'}}
 						World News
 					  {{/link-to}}
 					{{/link-li}}
@@ -63,11 +63,11 @@
 					  {{/link-to}}
 					{{/link-li}}
 					
-					<li role="presentation">
+					<!--<li role="presentation">
 					{{#link-to 'entertainment'}}
 					  Entertainment
 					{{/link-to}}
-					</li>
+					</li>-->
 
 				</ul>
 			</div>
@@ -75,14 +75,16 @@
 		</nav>
 		<div class="container">
 			<div class="well">
+			<img src="images/EmberNews.png" class="center-block img-responsive"/>
+			Welcome To Ember News
+			
 				{{outlet}}
 			</div>
 		</div>
 		</script>
 		
 		<script type="text/x-handlebars" data-template-name="index">
-			<img src="images/EmberNews.png" class="center-block img-responsive"/>
-			Welcome To Ember News
+			Please select some news!
 		</script>
 		<script type="text/x-handlebars" data-template-name="local">
 			<h2>Local</h2>
@@ -97,38 +99,44 @@
 			</div>
 			{{/each}}
 		</script>
-		<script type="text/x-handlebars" data-template-name="worldnews">
+		<script type="text/x-handlebars" data-template-name="wnews">
 			<h2>World News</h2>
+			{{#each entries in model}}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+					<h3 class="panel-title" id="panel-title">{{entries.title}} - {{entries.date}}<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
 				</div>
 				<div class="panel-body">
-					Panel content
+					{{entries.post}}
 				</div>
 			</div>
+			{{/each}}
 		</script>
 		<script type="text/x-handlebars" data-template-name="business">
 			<h2>Business</h2>
+			{{#each entries in model}}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+					<h3 class="panel-title" id="panel-title">{{entries.title}} - {{entries.date}}<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
 				</div>
 				<div class="panel-body">
-					Panel content
+					{{entries.post}}
 				</div>
 			</div>
+			{{/each}}
 		</script>
 		<script type="text/x-handlebars" data-template-name="entertainment">
 			<h2>Entertainment</h2>
+			{{#each entries in model}}
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3 class="panel-title" id="panel-title">Panel title<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
+					<h3 class="panel-title" id="panel-title">{{entries.title}} - {{entries.date}}<a class="anchorjs-link" href="#panel-title"><span class="anchorjs-icon"></span></a></h3>
 				</div>
 				<div class="panel-body">
-					Panel content
+					{{entries.post}}
 				</div>
 			</div>
+			{{/each}}
 		</script>
 	</body>
 </html>
