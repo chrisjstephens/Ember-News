@@ -4,6 +4,7 @@ App.Router.map(function() {
   this.route('wnews', { path: '/wnews' });
   this.route('business', { path: '/business' });
   this.route('entertainment', { path: '/entertainment' });  
+  this.route('weather', { path: '/weather' });
 });
 
 App.LocalRoute = Ember.Route.extend({
