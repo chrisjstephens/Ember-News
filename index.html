@@ -81,13 +81,20 @@
 			</div>
 			<div class="well">
 				<span class="pull-left">{{format-date}}</span>
-				<span class="pull-right">Ember Stock Market: {{emberStock}} </span>
+				<span class="pull-right">
+				Ember Stock Market: 
+				{{#if breakingnews}}
+				 <i class="glyphicon glyphicon-menu-down text-danger"></i> {{emberStock}}%
+				{{ else }}
+				 <i class="glyphicon glyphicon-menu-up text-success"></i> {{emberStock}}%
+				{{/if}}
+				</span>
 				<div class="clearfix"></div>
 			</div>
-			<button {{action "bnews"}}>Breaking News?</button>
+			<!--<button {{action "bnews"}}>Breaking News?</button>-->
 		{{#if breakingnews}}
 			<div class="alert alert-danger" role="alert">
-				<strong>BREAKING NEWS!</strong> Wait, nevermind.
+				<strong>BREAKING NEWS!</strong> The price of ember is down {{emberStock}}%!
 			</div>
 		{{/if}}
 			<div class="well">
