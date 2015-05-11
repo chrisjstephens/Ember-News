@@ -54,3 +54,30 @@ App.EntertainmentRoute = Ember.Route.extend({
     return this.store.find('Entertainment');
   }
 });
+
+App.WeatherRoute = Ember.Route.extend({
+	setupController: function(controller){
+			this.getWeather(controller);
+	},
+	getWeather: function(controller){
+	var weatherData = {};
+		$.ajax({
+		  url: 'http://api.openweathermap.org/data/2.5/weather?q=Toronto,ON',
+		  type: 'GET',
+		  success: function(data, textStatus, xhr) {
+			weatherData = data;
+			//console.log(weatherData.name);
+			console.log(weatherData);
+			controller.set('weatherCity', weatherData.name);
+			controller.set('weatherTemp', Math.round((weatherData.main.temp-273.15)*100/100));
+			controller.set('weatherIcon', weatherData.weather[0].icon)
+			controller.set('weatherType', weatherData.weather[0].main);
+			controller.set('weatherInfo', weatherData.weather[0].description);
+		  },
+		  error: function(){
+			  console.log("Error, ajax did not ccmplete.")
+		  }
+		});
+	return weatherData;
+	}
+});

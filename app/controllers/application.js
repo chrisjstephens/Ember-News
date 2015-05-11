@@ -12,30 +12,30 @@ App.ApplicationController = Ember.Controller.extend({
 	}
 });
 
-App.ApplicationRoute = Ember.Route.extend({
-	setupController: function(controller){
-			this.stockTicker(controller);
-	},
-	stockTicker: function(controller){
-		var self = this;
-		var price = Math.floor(Math.random() * 200) - 100;
-		controller.set('emberStock', price);
-		var getVal = controller.stockVal();
-		
-		//Pop up breaking news if stock price is down
-		if(getVal > 0){
-			controller.set('breakingnews', false);
-		} else {
-			controller.set('breakingnews', true);
-		}
-		
-		Em.run.later(function(){
-			self.stockTicker(controller);
-		}, 15000);
-	}
+App.WeatherController = Ember.Controller.extend({
+	weatherCity: 'city',
+	weatherTemp: '0',
+	weatherType: 'type',
+	weatherIcon: 'icon',
+	weatherInfo: 'info'
 });
 
+
+
+
 //Gets date using moment.js
-Ember.Handlebars.registerBoundHelper('format-date', function(format, date) {
+Ember.Handlebars.registerBoundHelper('format-date', function() {
   return moment().format("LL");
 });
+
+Ember.Handlebars.registerBoundHelper('format-date-future', function(dayNumber) {
+  //var date = moment().add('days', 1);
+  //date = moment().format("LL");
+  
+  //console.log(dayNumber);
+ 
+  return moment().add(dayNumber, 'D');
+  
+  //return date;
+});
+
