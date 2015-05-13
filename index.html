@@ -169,8 +169,8 @@
 				<div class="thumbnail">
 				  <!--<img src="" alt="">-->
 				  <div class="caption">
-					<h3>{{format-date}}</h3>
-					<p>{{weatherCity}}</p>
+					<!--<h3>{{format-date}}</h3>-->
+					<h3>{{weatherCity}}</h3>
 					<p><img src="http://openweathermap.org/img/w/{{weatherIcon}}.png" alt="{{weatherInfo}}"/> {{weatherTemp}}°C</p>
 					<p>{{weatherType}}</p>
 				  </div>
@@ -180,9 +180,10 @@
 				<div class="thumbnail">
 				  <!--<img src="" alt="">-->
 				  <div class="caption">
-					<h3>{{format-date-future dayNumber=2}}</h3>
-					<p>...</p>
-					<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					<!--<h3>{{format-date-future dayNumber=2}}</h3>-->
+					<h3>{{weatherData.list.1.name}}</h3>
+					<p><img src="http://openweathermap.org/img/w/{{weatherData.list.1.weather.0.icon}}.png" alt="{{weatherData.list.1.weather.0.description}}"/> {{weatherData.list.1.main.temp}}°C</p>
+					<p>{{weatherData.list.1.weather.0.main}}</p>
 				  </div>
 				</div>
 			  </div><!--
@@ -190,14 +191,15 @@
 				<div class="thumbnail">
 				  <!--<img src="" alt="">-->
 				  <div class="caption">
-					<h3>Thumbnail label</h3>
-					<p>...</p>
-					<p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+					<!--<h3>{{format-date-future dayNumber=2}}</h3>-->
+					<h3>{{weatherData.list.2.name}}</h3>
+					<p><img src="http://openweathermap.org/img/w/{{weatherData.list.2.weather.0.icon}}.png" alt="{{weatherData.list.2.weather.0.description}}"/> {{weatherData.list.2.main.temp}}°C</p>
+					<p>{{weatherData.list.2.weather.0.main}}</p>
 				  </div>
 				</div>
 			  </div>
 			</div>
-			<p>Our data is grabbed using JSON Data from <a href="http://openweathermap.org/">Open Weather Map</a></p>
+			<p>Our weather data is grabbed using JSON data from <a href="http://openweathermap.org/">Open Weather Map</a></p>
 		</script>
 	</body>
 </html>

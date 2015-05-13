@@ -17,7 +17,8 @@ App.WeatherController = Ember.Controller.extend({
 	weatherTemp: '0',
 	weatherType: 'type',
 	weatherIcon: 'icon',
-	weatherInfo: 'info'
+	weatherInfo: 'info',
+	weatherData: {}
 });
 
 
