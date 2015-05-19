@@ -163,35 +163,31 @@
 			{{/each}}
 		</script>
 		<script type="text/x-handlebars" data-template-name="weather">
+			/*Weather Data is data saved to objects, and variables*/
 			<h2>Weather</h2>
 			<div class="row">
-			  <div class="col-sm-6 col-md-4">
+			  <div class="col-sm-4 col-md-4">
 				<div class="thumbnail">
-				  <!--<img src="" alt="">-->
 				  <div class="caption">
-					<!--<h3>{{format-date}}</h3>-->
 					<h3>{{weatherCity}}</h3>
 					<p><img src="http://openweathermap.org/img/w/{{weatherIcon}}.png" alt="{{weatherInfo}}"/> {{weatherTemp}}°C</p>
 					<p>{{weatherType}}</p>
 				  </div>
 				</div>
 			  </div><!--
-			  --><div class="col-sm-6 col-md-4">
+			  --><div class="col-sm-4 col-md-4">
 				<div class="thumbnail">
-				  <!--<img src="" alt="">-->
 				  <div class="caption">
-					<!--<h3>{{format-date-future dayNumber=2}}</h3>-->
+
 					<h3>{{weatherData.list.1.name}}</h3>
 					<p><img src="http://openweathermap.org/img/w/{{weatherData.list.1.weather.0.icon}}.png" alt="{{weatherData.list.1.weather.0.description}}"/> {{weatherData.list.1.main.temp}}°C</p>
 					<p>{{weatherData.list.1.weather.0.main}}</p>
 				  </div>
 				</div>
 			  </div><!--
-			  --><div class="col-sm-6 col-md-4">
+			  --><div class="col-sm-4 col-md-4">
 				<div class="thumbnail">
-				  <!--<img src="" alt="">-->
 				  <div class="caption">
-					<!--<h3>{{format-date-future dayNumber=2}}</h3>-->
 					<h3>{{weatherData.list.2.name}}</h3>
 					<p><img src="http://openweathermap.org/img/w/{{weatherData.list.2.weather.0.icon}}.png" alt="{{weatherData.list.2.weather.0.description}}"/> {{weatherData.list.2.main.temp}}°C</p>
 					<p>{{weatherData.list.2.weather.0.main}}</p>

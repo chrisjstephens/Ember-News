@@ -57,19 +57,16 @@ App.EntertainmentRoute = Ember.Route.extend({
 
 App.WeatherRoute = Ember.Route.extend({
 	setupController: function(controller){
-			//this.getWeatherToday(controller, 'Toronto,ON');
-			//this.getWeatherToday(controller, 'Ottawa,ON');
-			//this.getWeatherToday(controller, 'Vancouver,BC');
+
 			this.getWeatherToday(controller);
 	},
 	getWeatherToday: function(controller){
 	var weatherData = {};
 		$.ajax({
-		  url: 'http://api.openweathermap.org/data/2.5/group?id=6167863,6173331,7626289&units=metric',
+		  url: 'http://api.openweathermap.org/data/2.5/group?id=6173331,6167863,5920288&units=metric',
 		  type: 'GET',
 		  success: function(data, textStatus, xhr) {
 			weatherData = data;
-			//console.log(weatherData.name);
 			console.log(weatherData);
 			controller.set('weatherData', data)
 			controller.set('weatherCity', weatherData.list[0].name);
