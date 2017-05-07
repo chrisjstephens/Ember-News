@@ -6,14 +6,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Ember News! An EmberJS project by Chris Stephens">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-	
+
 		<link rel="stylesheet" type="text/css" href="css/style.css"/>
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.2/handlebars.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<script src="http://builds.emberjs.com/tags/v1.11.1/ember.min.js"></script>
-		<script src="http://builds.emberjs.com/release/ember-template-compiler.js"></script>
-		<script src="http://builds.emberjs.com/beta/ember-data.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ember.js/1.11.0/ember-template-compiler.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/ember-data.js/1.0.0-beta.10/ember-data.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
 		<script src="app/app.js"></script>
 		<script src="app/router.js"></script>
@@ -26,7 +26,7 @@
 		<![endif]-->
 	</head>
 	<body>
-	
+
 		<script type="text/x-handlebars">
 
 		<nav class="navbar navbar-default">
@@ -47,31 +47,31 @@
 						Local
 					  {{/link-to}}
 					{{/link-li}}
-					
+
 					{{#link-li}}
 					  {{#link-to 'wnews'}}
 						World News
 					  {{/link-to}}
 					{{/link-li}}
-					
+
 					{{#link-li}}
 					  {{#link-to 'business'}}
 						Business
 					  {{/link-to}}
 					{{/link-li}}
-					
+
 					{{#link-li}}
 					  {{#link-to 'entertainment'}}
 						Entertainment
 					  {{/link-to}}
 					{{/link-li}}
-					
+
 					{{#link-li}}
 					  {{#link-to 'weather'}}
 						Weather
 					  {{/link-to}}
 					{{/link-li}}
-					
+
 
 				</ul>
 			</div>
@@ -84,7 +84,7 @@
 			<div class="well">
 				<span class="pull-left">{{format-date}}</span>
 				<span class="pull-right">
-				Ember Stock Market: 
+				Ember Stock Market:
 				{{#if breakingnews}}
 				 <i class="glyphicon glyphicon-menu-down text-danger"></i> {{emberStock}}%
 				{{ else }}
@@ -106,11 +106,11 @@
 			</div>
 		</div>
 		</script>
-		
+
 		<script type="text/x-handlebars" data-template-name="index">
 			Please select some news!
 		</script>
-		
+
 		<script type="text/x-handlebars" data-template-name="local">
 			<h2>Local</h2>
 			{{#each entries in model}}

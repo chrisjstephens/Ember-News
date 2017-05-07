@@ -3,7 +3,7 @@ App.Router.map(function() {
   this.route('local', { path: '/local' });
   this.route('wnews', { path: '/wnews' });
   this.route('business', { path: '/business' });
-  this.route('entertainment', { path: '/entertainment' });  
+  this.route('entertainment', { path: '/entertainment' });
   this.route('weather', { path: '/weather' });
 });
 
@@ -17,14 +17,14 @@ App.ApplicationRoute = Ember.Route.extend({
 		var price = Math.floor(Math.random() * 200) - 100;
 		controller.set('emberStock', price);
 		var getVal = controller.stockVal();
-		
+
 		//Pop up breaking news if stock price is down
 		if(getVal > 0){
 			controller.set('breakingnews', false);
 		} else {
 			controller.set('breakingnews', true);
 		}
-		
+
 		Em.run.later(function(){
 			self.stockTicker(controller);
 		}, 15000);
@@ -63,7 +63,7 @@ App.WeatherRoute = Ember.Route.extend({
 	getWeatherToday: function(controller){
 	var weatherData = {};
 		$.ajax({
-		  url: 'http://api.openweathermap.org/data/2.5/group?id=6173331,6167863,5920288&units=metric',
+		  url: 'http://api.openweathermap.org/data/2.5/group?id=6173331,6167863,5920288&units=metric&APPID=f309f887649c1dd928a7bc449eb836f0',
 		  type: 'GET',
 		  success: function(data, textStatus, xhr) {
 			weatherData = data;
